@@ -1,0 +1,453 @@
+.section {
+  position: relative;
+  height: 100vh;
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 0%);
+    top: 20%;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 1118px;
+    height: 1119px;
+    flex-shrink: 0;
+    z-index: -4;
+  }
+
+  .socialMedia {
+    position: absolute;
+    right: 1%;
+    top: 15%;
+  }
+
+  .cubLeft,
+  .bigCubLeft,
+  .cardLeft,
+  .bigCardLeft,
+  .cubCenter,
+  .bigCubCenter,
+  .cubRight,
+  .bigCubRight,
+  .cardRight,
+  .bigCardRight,
+  .cubRightSec,
+  .bigCubRightMob,
+  .cubLeftBot {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .bigCardRight,
+  .cardLeft {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  .cardRight,
+  .bigCardLeft {
+    animation: bigCard 3s ease-in-out infinite;
+  }
+
+  @keyframes bigCard {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .bigCubRightMob {
+    display: none;
+  }
+
+  .cubLeft {
+    left: 10%;
+    top: 40%;
+    width: 15.499px;
+    height: 22.7px;
+    transform: rotate(30deg);
+  }
+
+  .bigCubLeft {
+    width: 73.212px;
+    height: 107.23px;
+    transform: translate(0, -50%) rotate(155.812deg) scale(1, -1);
+    flex-shrink: 0;
+    left: 5%;
+    top: 57%;
+  }
+
+  .cubLeftBot {
+    width: 25.148px;
+    height: 36.833px;
+    transform: rotate(150deg) scale(-1, -1);
+    flex-shrink: 0;
+    bottom: 15%;
+    left: 9%;
+  }
+
+  .cardLeft {
+    width: 250px;
+    height: 225px;
+    flex-shrink: 0;
+    left: 14%;
+    top: 22%;
+  }
+
+  .bigCardLeft {
+    width: 350px;
+    height: 311px;
+    flex-shrink: 0;
+    left: 7%;
+    bottom: -8%;
+  }
+
+  .cubCenter {
+    width: 18.917px;
+    height: 27.706px;
+    flex-shrink: 0;
+    right: 50%;
+    transform: translate(50%, 0%);
+    bottom: 12%;
+  }
+
+  .bigCubCenter {
+    width: 25.845px;
+    height: 42.666px;
+    transform: translate(50%, 0%);
+    flex-shrink: 0;
+    top: 32%;
+    right: 50%;
+  }
+
+  .bigCardRight {
+    width: 250px;
+    height: 225px;
+    flex-shrink: 0;
+    right: 14%;
+    top: 22%;
+  }
+
+  .cardRight {
+    width: 350px;
+    height: 311px;
+    flex-shrink: 0;
+    right: 7%;
+    bottom: -8%;
+  }
+
+  .cubRight {
+    width: 18.917px;
+    height: 27.706px;
+    flex-shrink: 0;
+    transform: rotate(30deg);
+    right: 10%;
+    top: 40%;
+  }
+
+  .bigCubRight {
+    width: 73.841px;
+    height: 108.151px;
+    transform: translate(0, -50%) rotate(24.188deg);
+    flex-shrink: 0;
+    right: 5%;
+    top: 57%;
+  }
+
+  .cubRightSec {
+    width: 35.774px;
+    height: 52.396px;
+    flex-shrink: 0;
+    transform: rotate(-150deg) scale(-1, -1);
+    flex-shrink: 0;
+    bottom: 15%;
+    right: 10%;
+  }
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    color: #020011;
+    text-align: center;
+    font-feature-settings:
+      'liga' off,
+      'clig' off;
+    font-family: 'Whyte Inktrap';
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 500;
+    width: 400px;
+    line-height: 120%; /* 96px */
+  }
+
+  .subtitle {
+    color: rgba(2, 0, 17, 0.72);
+    text-align: center;
+    width: 400px;
+    font-feature-settings:
+      'liga' off,
+      'clig' off;
+    font-family: Chillax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 21.6px */
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding-top: 0;
+    &::after {
+      width: 900px;
+      height: 900px;
+      border-radius: 900px;
+    }
+
+    .title {
+      font-size: 65px;
+    }
+
+    .bigCardRight {
+      top: 13%;
+    }
+
+    .cardLeft {
+      top: 10%;
+    }
+
+    .bigCubCenter {
+      top: 25%;
+    }
+
+    .cubCenter {
+      bottom: 25%;
+    }
+
+    .bigCardLeft,
+    .cardRight {
+      bottom: -6%;
+    }
+
+    .cubLeftBot {
+      bottom: 11%;
+    }
+
+    .cubRight {
+      top: 20%;
+      right: 14%;
+    }
+
+    .cubLeft {
+      top: 15%;
+      left: 15%;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .section {
+    .title {
+      font-size: 55px;
+    }
+
+    .subtitle {
+      width: 290px;
+    }
+
+    .cardLeft {
+      width: 170px;
+      height: 150px;
+      top: 11%;
+    }
+
+    .cubLeft {
+      width: 20.233px;
+      height: 29.634px;
+      top: 25%;
+    }
+
+    .bigCubLeft {
+      top: 62%;
+      width: 22.582px;
+      height: 33.074px;
+      transform: translate(0, 0) rotate(15deg);
+    }
+
+    .bigCardLeft {
+      bottom: 18%;
+      width: 170px;
+      height: 150px;
+    }
+
+    .cardRight {
+      width: 170px;
+      height: 150px;
+      bottom: 8%;
+    }
+
+    .cubLeftBot {
+      display: none;
+    }
+
+    .bigCardRight {
+      width: 170px;
+      height: 150px;
+      top: 18%;
+    }
+
+    .cubRight {
+      right: 50%;
+      transform: translate(50%, 0) rotate(165deg) scale(-1, -1);
+    }
+
+    .bigCubCenter {
+      transform: rotate(24.188deg);
+      top: 15%;
+      right: 30%;
+    }
+
+    .bigCubRight {
+      transform: rotate(24.188deg);
+      top: 33%;
+      width: 16.203px;
+      height: 23.732px;
+      right: 17%;
+    }
+
+    .cubCenter {
+      transform: rotate(-24.188deg) translate(50%, 0);
+
+      bottom: 20%;
+    }
+
+    .cubRightSec {
+      bottom: 23%;
+      right: 7%;
+      width: 21.155px;
+      height: 30.984px;
+    }
+
+    .bigCubRightMob {
+      display: flex;
+      bottom: 26%;
+      width: 17.239px;
+      height: 25.249px;
+      transform: rotate(-15deg);
+      right: 16%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    &::after {
+      width: 520px;
+      top: 12%;
+      height: 520px;
+      border-radius: 520px;
+    }
+
+    .title {
+      font-size: 48px;
+    }
+
+    .texts {
+      gap: 8px;
+    }
+
+    .bigCubRight {
+      right: 5%;
+    }
+
+    .bigCardRight {
+      width: 120.904px;
+      height: 106.57px;
+      top: 22%;
+      right: 0%;
+    }
+
+    .cardLeft {
+      width: 148.397px;
+      top: 15%;
+      left: 10%;
+      height: 130.804px;
+    }
+
+    .bigCardLeft {
+      width: 144.864px;
+      height: 127.69px;
+      bottom: 20%;
+    }
+
+    .cardRight {
+      width: 163.878px;
+      height: 144.449px;
+      bottom: 13%;
+    }
+
+    .cubLeft {
+      top: 28%;
+    }
+
+    .bigCubCenter {
+      width: 13.121px;
+      height: 19.218px;
+      top: 15%;
+      right: 33%;
+    }
+
+    .cubRight {
+      width: 12.177px;
+      height: 17.835px;
+      top: 22%;
+      right: 45%;
+    }
+
+    .bigCubRightMob {
+      bottom: 30%;
+      right: 20%;
+    }
+
+    .cubRightSec {
+      bottom: 28%;
+    }
+
+    .cubCenter {
+      width: 12.123px;
+      height: 17.755px;
+      right: 55%;
+      bottom: 25%;
+    }
+  }
+}

@@ -1,0 +1,349 @@
+.section {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 1fr;
+  padding: 56px 0;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 64px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        color: #020011;
+        font-family: 'Whyte Inktrap', serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+
+      .description {
+        color: #12120f;
+        font-family: Chillax, serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+    }
+
+    .navigation {
+      display: flex;
+      gap: 25px;
+    }
+  }
+
+  .center {
+    grid-column: 2/ 4;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+
+    .tabs {
+      grid-column: 1 / 2;
+      display: flex;
+      width: auto;
+      height: 48px;
+      gap: 16px;
+      justify-content: center;
+      align-items: end;
+      position: relative;
+      margin: 0 auto;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        height: 15px;
+        width: 50px;
+        background-color: #e0e0e0;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 8px;
+        content: '';
+        left: 104.6px;
+        height: 20px;
+        width: 16px;
+        background-color: #f3f3f3;
+        border-radius: 8px;
+      }
+
+      .tab {
+        color: #6b6b6b;
+        font-family: Chillax, serif;
+        border: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        background-color: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        transition: all 300ms ease-in-out;
+
+        &Active {
+          height: 48px;
+          color: #020011;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: auto;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+          cursor: initial;
+          pointer-events: none;
+        }
+
+        &Deactivated {
+          cursor: pointer;
+          height: 42px;
+          color: #6b6b6b;
+        }
+      }
+    }
+
+    .list {
+      padding-left: 29px;
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      z-index: 0;
+      grid-column: 1 / 3;
+
+      .card {
+        min-width: 607px;
+      }
+    }
+
+    .slider {
+      display: none;
+    }
+
+    .bottom {
+      display: flex;
+
+      .buttonMobile {
+        display: none;
+      }
+
+      .counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        margin: auto auto 0;
+        position: relative;
+
+        .number {
+          color: #020011;
+          font-family: 'Whyte Inktrap', serif;
+          font-size: 56px;
+          margin-top: 20px;
+        }
+
+        .border {
+          position: absolute;
+
+          &LeftTop {
+            top: 0;
+            left: 0;
+          }
+
+          &LeftBottom {
+            left: 0;
+            bottom: 0;
+            transform: rotate(270deg);
+          }
+
+          &RightTop {
+            top: 0;
+            right: 0;
+            transform: rotate(90deg);
+          }
+
+          &RightBottom {
+            bottom: 0;
+            right: 0;
+            transform: rotate(180deg);
+          }
+
+          & > div {
+            display: flex;
+
+            & > svg > path {
+              stroke: #c2c2c2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .section {
+    .info {
+      padding: 0 24px 0 64px;
+    }
+
+    .center {
+      .list {
+        .card {
+          min-width: 530px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding: 56px 12px 16px;
+    height: 100%;
+
+    .info {
+      padding: 0 16px;
+      max-width: 420px;
+      margin: 0 auto;
+
+      .content {
+        .title {
+          text-align: center;
+          font-size: 20px;
+        }
+
+        .description {
+          text-align: center;
+        }
+      }
+
+      .navigation {
+        display: none;
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      height: 100%;
+
+      .list {
+        display: none;
+      }
+
+      .slider {
+        display: block;
+
+        .swiper {
+          .card {
+            padding: 0 4px;
+            height: 100%;
+            width: 560px;
+          }
+        }
+      }
+
+      .bottom {
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+
+        .buttonMobile {
+          display: flex;
+        }
+
+        .counter {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding: 56px 12px 16px;
+
+    .info {
+      padding: 0 16px;
+      max-width: 420px;
+      margin: 0 auto;
+
+      .content {
+        .title {
+          text-align: center;
+          font-size: 20px;
+        }
+
+        .description {
+          text-align: center;
+        }
+      }
+
+      .navigation {
+        display: none;
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      height: 100%;
+
+      .list {
+        display: none;
+      }
+
+      .slider {
+        display: block;
+
+        .swiper {
+          .card {
+            width: auto;
+          }
+        }
+      }
+
+      .bottom {
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+
+        .buttonMobile {
+          display: flex;
+        }
+
+        .counter {
+          .number {
+            color: #020011;
+            font-family: 'Whyte Inktrap', serif;
+            font-size: 56px;
+            line-height: 2;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 20;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}

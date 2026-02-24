@@ -1,0 +1,49 @@
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+.main::before,
+.main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #c1c1c4;
+  z-index: -10;
+}
+
+.main::before {
+  left: 27%;
+}
+
+.main::after {
+  right: 27%;
+}
+
+@media (max-width: 1024px) {
+  .main::before {
+    left: 18%;
+  }
+
+  .main::after {
+    right: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main::before {
+    left: 12px;
+  }
+
+  .main::after {
+    right: 12px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .main {
+    //overflow: visible;
+  }
+}

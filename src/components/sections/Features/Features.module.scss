@@ -1,0 +1,656 @@
+.section {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 1fr;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 56px 64px 0;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        color: #020011;
+        font-family: 'Whyte Inktrap', serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+
+      .description {
+        color: #12120f;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        font-family: Chillax, serif;
+      }
+    }
+
+    .button {
+      width: 202px;
+      height: 48px;
+    }
+  }
+
+  .center {
+    position: relative;
+    max-width: 700px;
+    max-height: 850px;
+    margin: 0 auto;
+    min-width: 654px;
+
+    .point {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+
+      &:nth-child(1) {
+        top: 153px;
+        left: 20px;
+
+        .line {
+          top: 35px;
+          left: 85px;
+
+          & > div > svg {
+            width: 140px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        bottom: 300px;
+        left: 59px;
+
+        .line {
+          top: 32px;
+          left: 40px;
+
+          & > div > svg {
+            width: 120px;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        bottom: 300px;
+        right: 39px;
+
+        .line {
+          transform: scaleX(-1);
+          top: 34px;
+          right: 50px;
+
+          & > div > svg {
+            width: 130px;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        top: 153px;
+        right: 34px;
+
+        .line {
+          transform: scaleX(-1);
+          top: 34px;
+          right: 60px;
+
+          & > div > svg {
+            width: 150px;
+          }
+        }
+      }
+
+      .pointTitle {
+        color: rgba(2, 0, 17, 0.5);
+        font-family: 'Whyte Inktrap', serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+
+      .activeTitle {
+        color: #020011;
+      }
+
+      .icon {
+      }
+
+      .activeIcon {
+        & > div > svg > circle {
+          fill: #ee4503;
+        }
+      }
+
+      .line {
+        position: absolute;
+      }
+
+      .activeLine {
+        & > div > svg > path {
+          stroke: #020011;
+        }
+      }
+    }
+
+    .energyLiquid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      z-index: 10;
+    }
+  }
+
+  .list {
+    padding: 0 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+  }
+
+  .slider {
+    display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  .section {
+    .center {
+      position: relative;
+
+      .point {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+
+        &:nth-child(1) {
+          top: 170px;
+          left: 10px;
+
+          .line {
+            top: 35px;
+            left: 85px;
+
+            & > div > svg {
+              width: 140px;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          bottom: 300px;
+          left: 30px;
+
+          .line {
+            top: 32px;
+            left: 40px;
+
+            & > div > svg {
+              width: 120px;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          bottom: 300px;
+          right: 15px;
+
+          .line {
+            transform: scaleX(-1);
+            top: 34px;
+            right: 50px;
+
+            & > div > svg {
+              width: 130px;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          top: 170px;
+          right: 20px;
+
+          .line {
+            transform: scaleX(-1);
+            top: 34px;
+            right: 60px;
+
+            & > div > svg {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+
+    .list {
+      padding: 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    padding: 56px 16px;
+    height: 100%;
+
+    .info {
+      padding: 0;
+      gap: 16px;
+      max-width: 420px;
+      margin: 0 auto;
+
+      .content {
+        gap: 12px;
+
+        .title {
+          font-size: 28px;
+          text-align: center;
+        }
+
+        .description {
+          text-align: center;
+        }
+      }
+
+      .button {
+        margin: 0 auto;
+        width: 184px;
+        height: 44px;
+        font-size: 16px;
+      }
+    }
+
+    .center {
+      max-height: 407px;
+      max-width: 560px;
+      min-width: 400px;
+      margin: 56px auto 0;
+
+      .point {
+        &:nth-child(1) {
+          top: -27px;
+          left: -102px;
+
+          .line {
+            top: 33px;
+            left: 77px;
+
+            & > div > svg {
+              width: 140px;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          bottom: 0;
+          left: -79px;
+
+          .line {
+            transform: scaleY(-1);
+            top: 0;
+            left: 40px;
+
+            & > div > svg {
+              width: 120px;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          bottom: -30px;
+          right: -83px;
+
+          .line {
+            transform: scaleX(-1) scaleY(-1);
+            top: 0;
+            right: 50px;
+
+            & > div > svg {
+              width: 130px;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          top: 88px;
+          right: -100px;
+
+          .line {
+            transform: scaleX(-1);
+            top: 30px;
+            right: 58px;
+
+            & > div > svg {
+              width: 110px;
+            }
+          }
+        }
+
+        .pointTitle {
+          font-size: 18px;
+        }
+
+        .activeTitle {
+        }
+
+        .icon {
+        }
+
+        .activeIcon {
+        }
+
+        .line {
+        }
+
+        .activeLine {
+        }
+      }
+    }
+
+    .list {
+      display: none;
+    }
+
+    .slider {
+      display: block;
+      margin-top: 40px;
+
+      .swiper {
+        & > div {
+          align-items: center;
+        }
+      }
+
+      .card {
+        width: 30%;
+      }
+
+      .navigation {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 32px;
+
+        .counter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 80px;
+          position: relative;
+
+          .number {
+            color: #020011;
+            font-family: 'Whyte Inktrap', serif;
+            font-size: 56px;
+            margin-top: 20px;
+          }
+
+          .border {
+            position: absolute;
+
+            &LeftTop {
+              top: 0;
+              left: 0;
+            }
+
+            &LeftBottom {
+              left: 0;
+              bottom: 0;
+              transform: rotate(270deg);
+            }
+
+            &RightTop {
+              top: 0;
+              right: 0;
+              transform: rotate(90deg);
+            }
+
+            &RightBottom {
+              bottom: 0;
+              right: 0;
+              transform: rotate(180deg);
+            }
+
+            & > div {
+              display: flex;
+
+              & > svg > path {
+                stroke: #c2c2c2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    padding: 56px 16px;
+    height: 100%;
+
+    .info {
+      padding: 0;
+      gap: 16px;
+
+      .content {
+        gap: 12px;
+
+        .title {
+          font-size: 20px;
+          text-align: center;
+        }
+
+        .description {
+          text-align: center;
+        }
+      }
+
+      .button {
+        margin: 0 auto;
+        width: 160px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+
+    .center {
+      max-height: 314px;
+      max-width: 300px;
+      margin: 0 auto;
+      min-width: auto;
+
+      .point {
+        z-index: 1;
+
+        &:nth-child(1) {
+          top: 84px;
+          left: 0;
+
+          .line {
+            top: 23px;
+            left: 77px;
+
+            & > div > svg {
+              width: 60px;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          bottom: 0;
+          left: -20px;
+
+          .line {
+            transform: scaleY(-1);
+            top: 5px;
+            left: 38px;
+
+            & > div > svg {
+              width: 80px;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          bottom: -70px;
+          right: 0;
+
+          .line {
+            transform: scaleX(-1) scaleY(-1);
+            top: 0;
+            right: 50px;
+
+            & > div > svg {
+              width: 70px;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          top: 150px;
+          right: -20px;
+
+          .line {
+            transform: scaleX(-1);
+            top: 30px;
+            right: 58px;
+
+            & > div > svg {
+              width: 60px;
+            }
+          }
+        }
+
+        .pointTitle {
+          font-size: 18px;
+        }
+
+        .activeTitle {
+        }
+
+        .icon {
+        }
+
+        .activeIcon {
+        }
+
+        .line {
+        }
+
+        .activeLine {
+        }
+      }
+    }
+
+    .list {
+      display: none;
+    }
+
+    .slider {
+      display: block;
+      margin-top: 90px;
+
+      .swiper {
+        & > div {
+          align-items: center;
+        }
+      }
+
+      .card {
+        width: 70%;
+      }
+
+      .navigation {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 32px;
+
+        .counter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 80px;
+          position: relative;
+
+          .number {
+            color: #020011;
+            font-family: 'Whyte Inktrap', serif;
+            font-size: 56px;
+            line-height: 2;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            z-index: 20;
+            margin-top: 20px;
+          }
+
+          .border {
+            position: absolute;
+
+            &LeftTop {
+              top: 0;
+              left: 0;
+            }
+
+            &LeftBottom {
+              left: 0;
+              bottom: 0;
+              transform: rotate(270deg);
+            }
+
+            &RightTop {
+              top: 0;
+              right: 0;
+              transform: rotate(90deg);
+            }
+
+            &RightBottom {
+              bottom: 0;
+              right: 0;
+              transform: rotate(180deg);
+            }
+
+            & > div {
+              display: flex;
+
+              & > svg > path {
+                stroke: #c2c2c2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

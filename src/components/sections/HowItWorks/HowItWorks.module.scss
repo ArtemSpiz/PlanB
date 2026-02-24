@@ -1,0 +1,568 @@
+.section {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 1fr;
+
+  &Title {
+    color: #020011;
+    font-family: 'Whyte Inktrap', serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  .left {
+    padding: 56px 64px;
+    z-index: 1;
+
+    .steps {
+      margin-top: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .step {
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border: none;
+        background: transparent;
+
+        .counter {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 80px;
+          position: relative;
+
+          .number {
+            color: #717171;
+            font-family: 'Whyte Inktrap', serif;
+            font-size: 40px;
+            margin-top: 20px;
+            line-height: 2;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+          }
+
+          .border {
+            position: absolute;
+
+            &LeftTop {
+              top: 0;
+              left: 0;
+            }
+
+            &LeftBottom {
+              left: 0;
+              bottom: 0;
+              transform: rotate(270deg);
+            }
+
+            &RightTop {
+              top: 0;
+              right: 0;
+              transform: rotate(90deg);
+            }
+
+            &RightBottom {
+              bottom: 0;
+              right: 0;
+              transform: rotate(180deg);
+            }
+
+            & > div {
+              display: flex;
+
+              & > svg > path {
+                stroke: #c2c2c2;
+              }
+            }
+          }
+        }
+
+        .icon {
+          display: none;
+        }
+
+        &Active {
+          border-radius: 6px;
+          background-color: white;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            right: 4px;
+            width: 20px;
+            height: 24px;
+            background-image: url('@/assets/icons/step-arrow.svg');
+          }
+          .counter {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            position: relative;
+
+            .number {
+              color: #020011;
+            }
+
+            .border {
+              position: absolute;
+
+              & > div {
+                display: flex;
+
+                & > svg > path {
+                  stroke: #ee4503;
+                }
+              }
+            }
+          }
+
+          .icon {
+            margin-top: 10px;
+            display: block;
+            color: #020011;
+            font-family: 'Whyte Inktrap', serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .center {
+    margin: 56px 0;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    .tabs {
+      display: flex;
+      width: auto;
+      height: 48px;
+      gap: 16px;
+      justify-content: center;
+      align-items: end;
+      position: relative;
+      margin: 0 auto;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        height: 15px;
+        width: 50px;
+        background-color: #e0e0e0;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 8px;
+        content: '';
+        left: 104.6px;
+        height: 20px;
+        width: 16px;
+        background-color: #f3f3f3;
+        border-radius: 8px;
+      }
+
+      .tab {
+        color: #6b6b6b;
+        font-family: Chillax, serif;
+        border: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        background-color: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        transition: all 300ms ease-in-out;
+
+        &Active {
+          height: 48px;
+          color: #020011;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: auto;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+          cursor: initial;
+          pointer-events: none;
+        }
+
+        &Deactivated {
+          cursor: pointer;
+          height: 42px;
+          color: #6b6b6b;
+        }
+      }
+    }
+
+    .swiper {
+      width: 311px;
+      height: 312px;
+      background-color: white;
+      border-radius: 28px;
+      margin-top: 109px;
+      margin-right: -3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > div {
+        width: 100%;
+      }
+
+      .card {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+
+        &Title {
+          color: #ee4503;
+          font-family: 'Whyte Inktrap', serif;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 29px;
+          text-transform: capitalize;
+          margin: 20px 0;
+        }
+
+        &Description {
+          color: rgba(2, 0, 17, 0.72);
+          font-family: Chillax, serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+        }
+      }
+
+      .progress {
+        display: flex;
+        gap: 4px;
+        padding: 0 0 25px 25px;
+
+        .point {
+          height: 5px;
+          width: 20px;
+          border-radius: 20%;
+          background-color: #a3a3a3;
+
+          &Active {
+            background-color: #ee4503;
+          }
+        }
+      }
+    }
+
+    .slider {
+      position: absolute;
+      width: 100%;
+      height: 570px;
+      display: flex;
+      justify-content: center;
+      top: 100px;
+      bottom: 0;
+      left: -13px;
+      right: 0;
+      z-index: -1;
+
+      .ellipse {
+        &TopLeft {
+          position: absolute;
+          left: 20%;
+          top: 3px;
+          animation: floatUpDown 1s ease-in-out infinite alternate;
+
+          &Small {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            animation: floatUpDown 1s ease-in-out infinite alternate;
+
+            & > div > svg {
+              width: 10px;
+            }
+          }
+        }
+
+        &BottomLeft {
+          position: absolute;
+          left: -10%;
+          bottom: 3px;
+          animation: floatUpDown 1s ease-in-out infinite alternate;
+
+          & > div > svg {
+            width: 10px;
+          }
+
+          &Small {
+            position: absolute;
+            left: 10%;
+            bottom: 5px;
+            animation: floatUpDown 1s ease-in-out infinite alternate;
+
+            & > div > svg {
+              width: 10px;
+            }
+          }
+        }
+
+        &BottomRight {
+          position: absolute;
+          right: -30%;
+          bottom: 3px;
+          animation: floatUpDown 1s ease-in-out infinite alternate;
+
+          & > div > svg {
+            width: 20px;
+          }
+
+          &Small {
+            position: absolute;
+            right: -10%;
+            bottom: 5px;
+            animation: floatUpDown 1s ease-in-out infinite alternate;
+
+            & > div > svg {
+              width: 15px;
+            }
+          }
+        }
+
+        &TopRight {
+          position: absolute;
+          right: -30%;
+          top: 3px;
+          animation: floatUpDown 1s ease-in-out infinite alternate;
+
+          & > div > svg {
+            width: 10px;
+          }
+
+          &Small {
+            position: absolute;
+            right: -10%;
+            top: 5px;
+            animation: floatUpDown 1s ease-in-out infinite alternate;
+
+            & > div > svg {
+              width: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .sliderMobile {
+      display: none;
+    }
+  }
+
+  .right {
+    padding: 56px 64px;
+    z-index: 1;
+
+    .icons {
+      display: flex;
+      justify-content: end;
+      gap: 16px;
+    }
+
+    .content {
+      margin-top: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        color: #020011;
+        font-family: 'Whyte Inktrap', serif;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 110%;
+      }
+
+      .description {
+        color: rgba(2, 0, 17, 0.72);
+        font-family: Chillax, serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+
+      .button {
+        width: 202px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 56px 0;
+
+    &Title {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .left {
+      padding: 0;
+
+      .steps {
+        display: none;
+
+        .step {
+          .counter {
+            .number {
+            }
+          }
+
+          .icon {
+          }
+
+          &Active {
+            .counter {
+              .number {
+              }
+
+              .border {
+              }
+            }
+
+            .icon {
+            }
+          }
+        }
+      }
+    }
+
+    .center {
+      margin: 24px 0 0 0;
+
+      .tabs {
+        .tab {
+          &Active {
+          }
+
+          &Deactivated {
+          }
+        }
+      }
+
+      .swiper {
+        margin-top: 50px;
+        width: 206px;
+        height: 207px;
+        margin-right: -23px;
+        z-index: 10;
+        border-radius: 20px;
+
+        & > div {
+          width: 100%;
+        }
+
+        .card {
+          padding: 20px;
+
+          &Title {
+            font-size: 20px;
+            margin: 0;
+          }
+
+          &Description {
+            font-size: 12px;
+          }
+        }
+
+        .progress {
+          .point {
+            width: 8px;
+            height: 2px;
+            &Active {
+            }
+          }
+        }
+      }
+
+      .slider {
+        display: none;
+      }
+
+      .sliderMobile {
+        display: block;
+        position: absolute;
+        top: 61px;
+        margin-right: 18px;
+        margin-left: 22px;
+
+        & > img {
+          height: 377px;
+        }
+      }
+    }
+
+    .right {
+      max-width: 326px;
+      margin: 150px auto 0;
+      padding: 0;
+
+      .icons {
+        display: none;
+      }
+
+      .content {
+        margin: 0;
+        gap: 10px;
+
+        .title {
+          text-align: center;
+          font-size: 20px;
+        }
+
+        .description {
+        }
+
+        .button {
+          margin: 6px auto 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
+  }
+}

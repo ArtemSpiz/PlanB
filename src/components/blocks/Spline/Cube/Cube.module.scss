@@ -1,0 +1,17 @@
+.cube {
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .cube {
+    scale: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .cube {
+    overflow: visible !important;
+  }
+}

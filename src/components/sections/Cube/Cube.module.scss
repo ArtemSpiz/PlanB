@@ -1,0 +1,277 @@
+.section {
+  position: relative;
+  height: 100vh;
+  padding-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 1fr;
+
+  .buttonMobile {
+    display: none;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .info {
+    display: flex;
+    align-items: end;
+    padding: 0 16px 68px 48px;
+  }
+
+  .description {
+    color: #020011;
+    font-family: 'Whyte Inktrap', serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .cube {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+    .bitcoin {
+      position: absolute;
+      top: 30%;
+      z-index: -2;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+
+      & > div {
+        display: flex;
+        padding: 0 48px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .button {
+      cursor: pointer;
+      position: absolute;
+      bottom: -21px;
+      left: 0;
+      right: 0;
+
+      & > div {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .list {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 24px;
+    row-gap: 14px;
+    margin-top: auto;
+    padding: 0 0 68px 16px;
+
+    .item {
+      .title {
+        text-align: start;
+        color: #282828;
+        font-family: Chillax, serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.286px;
+      }
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .socialMedia {
+    gap: 10px;
+    position: absolute;
+    right: 1%;
+    top: 15%;
+    z-index: 20;
+  }
+}
+
+@media (max-width: 1280px) {
+  .section {
+    padding-top: 15%;
+
+    .buttonMobile {
+    }
+
+    .title {
+    }
+
+    .info {
+      padding: 0 16px 64px 24px;
+    }
+
+    .description {
+      font-size: 24px;
+    }
+
+    .center {
+      .cube {
+        top: 100px;
+      }
+
+      .bitcoin {
+        & > div {
+          padding: 0 24px;
+        }
+      }
+
+      .button {
+      }
+    }
+
+    .list {
+      padding: 0 12px 64px 16px;
+
+      .item {
+        justify-content: end;
+
+        .title {
+        }
+
+        .description {
+        }
+      }
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 140px 12px 0;
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      z-index: 2;
+
+      .description {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .buttonMobile {
+      display: flex;
+      justify-content: center;
+      order: 4;
+      margin-bottom: 0;
+
+      & > div {
+        display: flex;
+      }
+    }
+
+    .center {
+      order: 1;
+
+      .cube {
+        top: 15%;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .bitcoin {
+        position: absolute;
+        top: 25%;
+        z-index: -2;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+
+        & > div {
+          display: flex;
+          padding: 0 16px;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      .button {
+        display: none;
+      }
+    }
+
+    .info {
+      padding: 0;
+      order: 2;
+      margin-top: auto;
+      text-align: center;
+
+      .description {
+        font-size: 24px;
+      }
+    }
+
+    .list {
+      order: 3;
+      margin: 16px 0 0;
+      padding: 0 19px;
+      column-gap: 8px;
+      row-gap: 12px;
+
+      .item {
+        .title {
+          text-align: center;
+          font-size: 13px;
+        }
+
+        .description {
+          font-size: 26px;
+          text-align: center;
+          line-height: 2;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .socialMedia {
+    display: none;
+  }
+}
+
+@media (max-width: 490px) {
+  .section {
+    position: relative;
+    height: 100%;
+
+    .buttonMobile {
+      margin-bottom: -26px;
+    }
+  }
+}

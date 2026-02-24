@@ -1,0 +1,109 @@
+.section {
+  width: 100%;
+  height: calc(100vh + 100px);
+  position: relative;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 56px 0 56px 64px;
+    max-width: 206px;
+    position: relative;
+    z-index: 10;
+
+    .title {
+      color: #020011;
+      font-family: 'Whyte Inktrap', serif;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+
+    .description {
+      color: #12120f;
+      font-family: Chillax, serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite alternate;
+
+    &Mobile {
+      display: none;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 56px 0 0 0;
+    height: 100%;
+
+    .content {
+      padding: 0;
+      margin: 0 auto;
+      max-width: 358px;
+      gap: 12px;
+
+      .title {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .description {
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .button {
+        width: 160px;
+        margin: 4px auto 0;
+      }
+    }
+
+    .image {
+      display: none;
+
+      &Mobile {
+        margin: 26px auto 0;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .circle {
+      display: none;
+    }
+  }
+}

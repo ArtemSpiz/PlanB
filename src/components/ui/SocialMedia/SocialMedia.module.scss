@@ -1,0 +1,30 @@
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 20;
+}
+
+.link {
+  padding: 7px;
+  background-color: #020011;
+  border-radius: 80px;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #ee4503;
+  }
+
+  > div > div {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

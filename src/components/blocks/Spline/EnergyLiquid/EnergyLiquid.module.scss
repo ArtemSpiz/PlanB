@@ -1,0 +1,13 @@
+.spline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .spline {
+    scale: 0.5;
+  }
+}

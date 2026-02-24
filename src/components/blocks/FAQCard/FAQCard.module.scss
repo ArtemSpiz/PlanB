@@ -1,0 +1,298 @@
+.card {
+  &Active {
+    position: relative;
+    padding: 0 48px 32px;
+    background-color: #ee4503;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 8px;
+
+    .question {
+      color: #ffffff;
+      font-family: 'Whyte Inktrap';
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 110%;
+      z-index: 2;
+      padding-right: 190px;
+    }
+
+    .answer {
+      font-family: Chillax, serif;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+
+    .type {
+      font-family: Chillax, serif;
+      color: #020011;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      position: absolute;
+      bottom: -35px;
+      left: 5%;
+    }
+  }
+
+  &Small {
+    position: relative;
+    background-color: #ededed;
+    padding: 0 24px 16px;
+    border-radius: 0 0 8px 8px;
+
+    .question {
+      line-height: 110%;
+    }
+
+    &Bg {
+      position: absolute;
+      top: -22px;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+
+      & > div {
+        display: flex;
+
+        & > svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &Active {
+      position: relative;
+      background-color: #ee4503;
+      padding: 0 24px 16px;
+      border-radius: 0 0 8px 8px;
+
+      .question {
+        color: #ffffff;
+        line-height: 110%;
+      }
+    }
+  }
+}
+
+.block {
+  position: relative;
+  padding: 20px;
+
+  &Icon {
+    &Tl {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &Tr {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &Br {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    &Bl {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.cardBgTop {
+  position: absolute;
+  top: -58px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+
+  & > div {
+    display: flex;
+
+    & > svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.cardBgBottom {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+
+  & > div {
+    display: flex;
+
+    & > svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .card {
+    &Active {
+      position: relative;
+      padding: 0 24px 10px;
+      background-color: #ee4503;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .question {
+        font-size: 20px;
+        padding-right: 0;
+      }
+
+      .answer {
+        font-size: 16px;
+      }
+
+      .type {
+      }
+
+      .block {
+        padding: 8px 20px;
+
+        &Icon {
+          &Tl {
+          }
+
+          &Tr {
+          }
+
+          &Br {
+          }
+
+          &Bl {
+          }
+        }
+      }
+    }
+
+    &Small {
+      height: 76px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 16px 0;
+
+      .question {
+        font-size: 18px;
+      }
+
+      &Bg {
+        top: -19px;
+      }
+
+      &Active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #ee4503;
+        padding: 0 16px 0;
+        height: 76px;
+        border-radius: 0 0 8px 8px;
+
+        .question {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &BgTop {
+      top: -55px;
+    }
+
+    &BgBottom {
+      bottom: -30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    &Active {
+      padding: 16px 24px 65px;
+      background-image: url('@/assets/icons/faq-card-mobile.svg');
+      background-position: center;
+      background-color: transparent;
+      height: 372px;
+      justify-content: space-around;
+
+      .question {
+        padding-right: 90px;
+      }
+
+      .answer {
+        font-size: 16px;
+      }
+
+      .type {
+        bottom: 5px;
+      }
+
+      .block {
+        &Icon {
+          &Tl {
+          }
+
+          &Tr {
+          }
+
+          &Br {
+          }
+
+          &Bl {
+          }
+        }
+      }
+    }
+
+    &Small {
+      .question {
+      }
+
+      &Bg {
+        height: auto;
+        top: -21px;
+
+        & > div > svg {
+          height: 23px;
+        }
+      }
+
+      &Active {
+        .question {
+        }
+      }
+    }
+
+    &BgTop {
+      display: none;
+    }
+
+    &BgBottom {
+      display: none;
+    }
+  }
+}

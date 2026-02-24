@@ -1,0 +1,43 @@
+.BlogCategory {
+  position: relative;
+  overflow: hidden;
+}
+
+.BlogCategory::before,
+.BlogCategory::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #c1c1c4;
+  z-index: -10;
+}
+
+.BlogCategory::before {
+  left: 27%;
+}
+
+.BlogCategory::after {
+  right: 27%;
+}
+
+@media (max-width: 1024px) {
+  .BlogCategory::before {
+    left: 18%;
+  }
+
+  .BlogCategory::after {
+    right: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .BlogCategory::before {
+    left: 12px;
+  }
+
+  .BlogCategory::after {
+    right: 12px;
+  }
+}

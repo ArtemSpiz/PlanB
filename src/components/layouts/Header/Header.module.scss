@@ -1,0 +1,244 @@
+.header {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  background-color: #fff;
+  margin: 0 auto;
+  z-index: 10;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 100%;
+  padding: 0 50px;
+
+  &Nav {
+    display: flex;
+    &.open {
+      display: flex;
+    }
+  }
+
+  &Menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style-type: none;
+  }
+
+  &MenuItem {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #020011;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 120%;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &Active {
+      text-decoration-color: #ee4503;
+    }
+
+    &Active .headerSubmenu {
+      display: flex;
+    }
+
+    &Active .headerMenuItemIcon {
+      transform: rotate(180deg);
+    }
+
+    &Icon {
+      height: 14px;
+      width: 14px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .itemTitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &Submenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 320%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 2px 8px;
+    list-style: none;
+    padding: 20px;
+    z-index: 10;
+    gap: 16px;
+    width: max-content;
+
+    &Item {
+      font-size: 16px;
+      color: #1f1f1f;
+
+      &Link {
+        color: inherit;
+        text-decoration-thickness: 2px;
+        text-decoration-color: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &Active {
+          text-decoration-color: #ee4503;
+        }
+      }
+    }
+  }
+
+  &Logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -21px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 319px;
+      height: 16px;
+      background: #fff;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      z-index: -1;
+    }
+  }
+
+  &Actions {
+    &Button {
+      min-width: 202px;
+      height: 48px;
+    }
+  }
+
+  .burgerButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    border-radius: 0;
+    padding: 0 20px;
+
+    &Nav {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &Nav.open {
+      display: flex;
+    }
+
+    &Menu {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .burgerButton {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 55px;
+    justify-content: end;
+
+    &Nav {
+      top: 50px;
+    }
+
+    &MenuItem {
+      &Active {
+        text-decoration-color: transparent !important;
+
+        .itemTitle > span {
+          text-decoration: underline;
+          text-decoration-color: #ee4503;
+        }
+      }
+    }
+
+    &Submenu {
+      display: flex;
+      position: relative;
+
+      &Item {
+        font-size: 16px;
+        color: #1f1f1f;
+        text-decoration-color: transparent !important;
+
+        &Link {
+          color: inherit;
+          text-decoration-thickness: 2px;
+          text-decoration-color: transparent;
+          transition: all 0.3s ease-in-out;
+
+          &Active {
+            text-decoration-color: transparent;
+          }
+        }
+      }
+    }
+
+    &Logo {
+      & > div > svg {
+        width: 120px;
+        height: 38px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 220px;
+        height: 16px;
+        background: #fff;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        z-index: -1;
+      }
+    }
+
+    &ActionsButton {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import url('assets/styles/chillax.css');
+@import url('assets/styles/whyte-inktrap.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Chillax-Regular, sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    background-color: #F3F3F3;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #020011;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Whyte Inktrap", serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+h3 {
+    color: #020011;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Whyte Inktrap", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.titleS {
+    font-family: Chillax, serif;
+    color: #282828;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.286px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+}
+
+#insights-updates-section {
+    .insights-updates-slide:not(.swiper-slide-active) {
+        transform: scale(0.5) translateY(330px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #insights-updates-section {
+        .insights-updates-slide:not(.swiper-slide-active) {
+            transform:none;
+        }
+    }
+}

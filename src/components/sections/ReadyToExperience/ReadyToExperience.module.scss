@@ -1,0 +1,110 @@
+.section {
+  position: relative;
+  height: 100vh;
+  padding-top: 56px;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 388px;
+    margin: 0 auto;
+    text-align: center;
+
+    .title {
+      color: #020011;
+      font-family: 'Whyte Inktrap', serif;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      z-index: 20;
+    }
+
+    .description {
+      color: rgba(2, 0, 17, 0.72);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+  }
+  .bitcoin {
+    position: absolute;
+    top: 30%;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    & > div {
+      display: flex;
+      padding: 0 48px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .unionLeft {
+    position: absolute;
+    top: 56px;
+    left: 64px;
+  }
+
+  .unionRight {
+    position: absolute;
+    bottom: 56px;
+    right: 64px;
+  }
+
+  .keyboard {
+    margin: 62px auto 0;
+    width: max-content;
+    height: max-content;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    height: 100%;
+    padding: 56px 0;
+
+    .text {
+      .title {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+    }
+    .bitcoin {
+    }
+
+    .unionLeft {
+      top: 175px;
+
+      & > div > svg {
+        width: 149px;
+        height: 48px;
+      }
+    }
+
+    .unionRight {
+      bottom: 56px;
+
+      & > div > svg {
+        width: 149px;
+        height: 48px;
+      }
+    }
+
+    .keyboard {
+      margin: 100px auto;
+    }
+  }
+}

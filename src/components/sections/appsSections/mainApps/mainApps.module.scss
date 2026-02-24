@@ -1,0 +1,502 @@
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+
+  .socialMedia {
+    position: absolute;
+    right: 1%;
+    top: 15%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 0%);
+    top: 20%;
+    border-radius: 1119px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 1118px;
+    height: 1119px;
+    flex-shrink: 0;
+    z-index: -5;
+  }
+
+  .cubAppsLeft,
+  .cubAppsBlogLeft,
+  .keyAppsLeft1,
+  .keyAppsLeft2,
+  .keyAppsLeft3,
+  .cubAppsBlogCenter,
+  .cubAppsCenter,
+  .cubAppsBlogCenter2,
+  .cubAppsCenter2,
+  .keyAppsRight4,
+  .keyAppsRight5,
+  .keyAppsRight6,
+  .cubAppsBlogRight,
+  .cubAppsRight {
+    position: absolute;
+  }
+
+  .keyAppsLeft1,
+  .keyAppsLeft2,
+  .keyAppsLeft3 {
+    animation: keys 3s ease-in-out infinite;
+  }
+
+  .keyAppsRight4,
+  .keyAppsRight5,
+  .keyAppsRight6 {
+    animation: keysRight 3s ease-in-out infinite;
+  }
+
+  @keyframes keysRight {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(-5px, 10px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes keys {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(5px, 10px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .cubAppsLeft {
+    width: 25.148px;
+    height: 36.833px;
+    transform: rotate(150deg) scale(1, -1);
+    left: 12%;
+    top: 30%;
+  }
+
+  .cubAppsBlogLeft {
+    width: 35.774px;
+    height: 52.396px;
+    transform: rotate(155.812deg) scale(1, -1);
+    flex-shrink: 0;
+    left: 13%;
+    bottom: 25%;
+  }
+
+  .keyAppsLeft1 {
+    width: 108px;
+    height: 95px;
+    flex-shrink: 0;
+    left: 18%;
+    top: 32%;
+  }
+
+  .keyAppsLeft2 {
+    width: 105.855px;
+    height: 93.253px;
+    left: 7%;
+    top: 45%;
+  }
+
+  .keyAppsLeft3 {
+    width: 126px;
+    height: 111px;
+    flex-shrink: 0;
+    left: 20%;
+    bottom: 16%;
+  }
+
+  .cubAppsBlogCenter {
+    width: 29.13px;
+    height: 42.666px;
+    transform: rotate(-30deg);
+    flex-shrink: 0;
+    left: 37%;
+    top: 25%;
+  }
+
+  .cubAppsCenter {
+    width: 18.917px;
+    height: 27.706px;
+    transform: rotate(150deg) scale(-1, -1);
+    flex-shrink: 0;
+    left: 43%;
+    bottom: 20%;
+  }
+
+  .cubAppsBlogCenter2 {
+    width: 29.13px;
+    height: 42.666px;
+    flex-shrink: 0;
+    transform: rotate(-150deg) scale(-1, -1);
+    right: 40%;
+    bottom: 25%;
+  }
+
+  .cubAppsCenter2 {
+    width: 18.917px;
+    height: 27.706px;
+    transform: rotate(24.188deg) scale(-1, 1);
+    flex-shrink: 0;
+    right: 35%;
+    top: 20%;
+  }
+
+  .keyAppsRight4 {
+    width: 108px;
+    height: 95px;
+    right: 20%;
+    top: 30%;
+  }
+  .keyAppsRight5 {
+    width: 105.855px;
+    height: 93.253px;
+    right: 10%;
+    top: 45%;
+  }
+  .keyAppsRight6 {
+    width: 126px;
+    height: 111px;
+    right: 20%;
+    bottom: 16%;
+  }
+
+  .cubAppsBlogRight {
+    width: 29.13px;
+    height: 42.666px;
+    transform: rotate(24.188deg);
+    right: 15%;
+    top: 30%;
+  }
+
+  .cubAppsRight {
+    width: 35.774px;
+    height: 52.396px;
+    flex-shrink: 0;
+    transform: rotate(-150deg) scale(-1, -1);
+    right: 13%;
+    bottom: 22%;
+  }
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    color: #020011;
+    text-align: center;
+    font-feature-settings:
+      'liga' off,
+      'clig' off;
+    font-family: 'Whyte Inktrap';
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 96px */
+  }
+
+  .subtitle {
+    color: rgba(2, 0, 17, 0.72);
+    text-align: center;
+    width: 285px;
+    font-feature-settings:
+      'liga' off,
+      'clig' off;
+    font-family: Chillax;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 21.6px */
+  }
+}
+@media (max-width: 1300px) {
+  .section {
+    .title {
+      font-size: 70px;
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .section {
+    .keyAppsLeft1 {
+      left: 15%;
+    }
+
+    .keyAppsRight4 {
+      right: 18%;
+    }
+
+    .keyAppsRight5 {
+      right: 8%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .section {
+    .title {
+      font-size: 60px;
+    }
+
+    ._section_1qrqn_1 ._keyAppsLeft1_1qrqn_26 {
+      left: 15%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    .socialMedia {
+      display: none;
+    }
+    .keyAppsLeft1 {
+      left: 35%;
+      top: 15%;
+    }
+
+    .keyAppsRight4 {
+      right: 17%;
+      top: 20%;
+    }
+
+    .keyAppsRight5 {
+      left: 15%;
+      top: 25%;
+    }
+
+    .keyAppsLeft2 {
+      left: 10%;
+      top: 70%;
+    }
+
+    .keyAppsRight6 {
+      right: 40%;
+      bottom: 12%;
+    }
+
+    .keyAppsLeft3 {
+      left: 70%;
+      bottom: 22%;
+    }
+
+    .cubAppsLeft {
+      left: 32%;
+      width: 18.028px;
+      height: 26.404px;
+    }
+
+    .cubAppsBlogLeft {
+      display: none;
+    }
+
+    .cubAppsCenter {
+      display: none;
+    }
+
+    .cubAppsBlogCenter {
+      left: 62%;
+      top: 25%;
+      transform: rotate(24.188deg);
+      width: 13.121px;
+      height: 19.218px;
+    }
+
+    .cubAppsCenter2 {
+      right: 40%;
+      top: 33%;
+      transform: rotate(-24.188deg);
+      width: 13.121px;
+      height: 19.218px;
+    }
+
+    .cubAppsBlogRight {
+      width: 16.203px;
+      height: 23.732px;
+      top: 38%;
+    }
+
+    .cubAppsBlogCenter2 {
+      right: 60%;
+      bottom: 25%;
+      width: 16.203px;
+      height: 23.732px;
+      transform: rotate(-24.188deg);
+    }
+
+    .cubAppsRight {
+      right: 42%;
+      bottom: 28%;
+      width: 21.155px;
+      height: 30.984px;
+    }
+
+    .keyAppsLeft1,
+    .keyAppsLeft2,
+    .keyAppsLeft3 {
+      animation: keys 3s ease-in-out infinite;
+    }
+
+    .keyAppsRight4,
+    .keyAppsRight5,
+    .keyAppsRight6 {
+      animation: keysRight 3s ease-in-out infinite;
+    }
+
+    @keyframes keysRight {
+      0% {
+        transform: translate(0px, 0px);
+      }
+      50% {
+        transform: translate(0px, 0px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+
+    @keyframes keys {
+      0% {
+        transform: translate(0px, 0px);
+      }
+      50% {
+        transform: translate(0px, 0px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+
+    .keyAppsLeft1,
+    .keyAppsRight5,
+    .keyAppsRight4 {
+      animation: keysMobRight 3s ease-in-out infinite;
+    }
+
+    .keyAppsLeft3,
+    .keyAppsLeft2,
+    .keyAppsRight6 {
+      animation: keysMob 3s ease-in-out infinite;
+    }
+
+    @keyframes keysMobRight {
+      0% {
+        transform: translate(0px, 0px);
+      }
+      50% {
+        transform: translate(0px, 5px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+
+    @keyframes keysMob {
+      0% {
+        transform: translate(0px, 0px);
+      }
+      50% {
+        transform: translate(0px, -5px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .titleLine2 {
+    font-size: 40px;
+  }
+  .section {
+    &::after {
+      top: 10%;
+      border-radius: 520px;
+      width: 520px;
+      height: 520px;
+    }
+    .title {
+      font-size: 48px;
+    }
+    .keyAppsLeft1 {
+      width: 84px;
+      height: 74px;
+      top: 9%;
+    }
+
+    .keyAppsRight4 {
+      width: 82px;
+      height: 72px;
+      right: 5%;
+    }
+
+    .keyAppsRight5 {
+      width: 80px;
+      height: 72px;
+      left: 5%;
+    }
+
+    .keyAppsLeft2 {
+      width: 82.671px;
+      height: 72.83px;
+      left: 5%;
+      top: 65%;
+    }
+
+    .keyAppsRight6 {
+      width: 98px;
+      height: 85px;
+      right: 35%;
+      bottom: 17%;
+    }
+
+    .keyAppsLeft3 {
+      width: 84.4px;
+      height: 74.353px;
+    }
+
+    .cubAppsBlogCenter2 {
+      right: 60%;
+      bottom: 28%;
+      width: 17.239px;
+      height: 25.249px;
+    }
+
+    .cubAppsLeft {
+      top: 25%;
+    }
+
+    .cubAppsBlogCenter {
+      left: 72%;
+      top: 18%;
+    }
+
+    .cubAppsBlogRight {
+      right: 5%;
+    }
+
+    .cubAppsRight {
+      right: 33%;
+      bottom: 31%;
+    }
+  }
+}

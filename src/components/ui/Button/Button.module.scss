@@ -1,0 +1,57 @@
+.btn {
+  border: none;
+  border-radius: 16px 8px;
+  font-size: 16px;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Chillax, serif;
+
+  &--primary {
+    background-color: #ee4503;
+    color: #fff;
+
+    &:hover {
+      background-color: #020011;
+    }
+  }
+
+  &--secondary {
+    background-color: #020011;
+    color: #fff;
+
+    &:hover {
+      background-color: #ee4503;
+    }
+  }
+
+  &--slider {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px 8px;
+    background: #020011;
+
+    &:hover {
+      background-color: #ee4503;
+    }
+  }
+
+  &Disabled {
+    background: #454545;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    & > div > div > svg > path {
+      fill: #7D7D7D;
+    }
+  }
+}
+
+.icon {
+  & > div {
+    display: flex;
+  }
+}

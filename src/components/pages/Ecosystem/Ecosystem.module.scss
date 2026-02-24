@@ -1,0 +1,49 @@
+.ecosystem {
+  position: relative;
+  overflow: hidden;
+}
+
+.ecosystem::before,
+.ecosystem::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #c1c1c4;
+  z-index: -10;
+}
+
+.ecosystem::before {
+  left: 27%;
+}
+
+.ecosystem::after {
+  right: 27%;
+}
+
+@media (max-width: 1024px) {
+  .ecosystem::before {
+    left: 18%;
+  }
+
+  .ecosystem::after {
+    right: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ecosystem::before {
+    left: 12px;
+  }
+
+  .ecosystem::after {
+    right: 12px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .ecosystem {
+    //overflow: visible;
+  }
+}

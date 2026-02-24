@@ -1,0 +1,43 @@
+.blog {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog::before,
+.blog::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #c1c1c4;
+  z-index: -10;
+}
+
+.blog::before {
+  left: 27%;
+}
+
+.blog::after {
+  right: 27%;
+}
+
+@media (max-width: 1024px) {
+  .blog::before {
+    left: 18%;
+  }
+
+  .blog::after {
+    right: 18%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog::before {
+    left: 12px;
+  }
+
+  .blog::after {
+    right: 12px;
+  }
+}
