@@ -1,63 +1,63 @@
 export const MENU = [
   {
-    name: 'Ecosystem',
+    name: "Ecosystem",
     subMenu: [
+      // {
+      //   name: 'Stake',
+      //   link: '/coming-soon',
+      // },
       {
-        name: 'Stake',
-        link: '/coming-soon',
-      },
-      {
-        name: 'Apps',
-        link: '/ecosystem',
+        name: "Apps",
+        link: "/ecosystem",
       },
     ],
   },
   {
-    name: 'Learn',
+    name: "Learn",
     subMenu: [
+      // {
+      //   name: 'Roadmap',
+      //   link: '/coming-soon',
+      // },
       {
-        name: 'Roadmap',
-        link: '/coming-soon',
+        name: "Block Explorer",
+        link: "https://explorer-test.planb-labs.com/",
       },
+      // {
+      //   name: 'Validators',
+      //   link: '/coming-soon',
+      // },
       {
-        name: 'Block Explorer',
-        link: 'https://explorer-test.planb-labs.com/',
-      },
-      {
-        name: 'Validators',
-        link: '/coming-soon',
-      },
-      {
-        name: 'White Paper',
-        link: 'https://plan-b.gitbook.io/docs/introduction/white-paper',
+        name: "White Paper",
+        link: "https://plan-b.gitbook.io/docs/introduction/white-paper",
       },
     ],
   },
   {
-    name: 'Build',
+    name: "Build",
     subMenu: [
       {
-        name: 'Documentation',
-        link: 'https://plan-b.gitbook.io/docs',
+        name: "Documentation",
+        link: "https://plan-b.gitbook.io/docs",
       },
 
-      {
-        name: 'Bug Bounty',
-        link: '/coming-soon',
-      },
+      // {
+      //   name: 'Bug Bounty',
+      //   link: '/coming-soon',
+      // },
     ],
   },
   {
-    name: 'Community',
+    name: "Community",
     subMenu: [
       {
-        name: 'Blog',
-        link: '/blog',
+        name: "Blog",
+        link: "/blog",
       },
-      {
-        name: 'Communities',
-        link: '/coming-soon',
-      },
+      // {
+      //   name: 'Communities',
+      //   link: '/coming-soon',
+      // },
     ],
   },
 ];
