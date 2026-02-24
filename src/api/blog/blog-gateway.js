@@ -1,16 +1,8 @@
-import { directusApi } from '../../plugins/axios';
-
-const postPreviewFields =
-  'category, image, title, description, slug, date_created,timeToRead';
+import { BLOG_POSTS } from '../../data/blog';
 
 async function getPostsPreview() {
   try {
-    const { data } = await directusApi.get('posts', {
-      params: {
-        fields: postPreviewFields,
-      },
-    });
-    return data.data;
+    return BLOG_POSTS;
   } catch (e) {
     console.log(e);
     return [];
@@ -19,14 +11,16 @@ async function getPostsPreview() {
 
 async function getPost(slug) {
   try {
-    const { data } = await directusApi.get('posts', {
-      params: {
-        fields: '*',
-        filter: slug ? { slug: { _eq: slug } } : {},
-      },
-    });
+    if (!slug) {
+      return null;
+    }
 
-    return data.data[0];
+    const normalizedSlug = slug.toLowerCase();
+    const post = BLOG_POSTS.find(
+      (item) => item.slug?.toLowerCase() === normalizedSlug
+    );
+
+    return post || null;
   } catch (error) {
     console.error('Error fetching post:', error);
     return null;

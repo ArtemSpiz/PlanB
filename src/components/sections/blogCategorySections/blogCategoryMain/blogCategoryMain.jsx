@@ -1,4 +1,4 @@
-import styles from '@/components/sections/blogCategorySections/blogCategoryMain/blogCategoryMain.module.scss';
+import styles from "@/components/sections/blogCategorySections/blogCategoryMain/blogCategoryMain.module.scss";
 
 const blogCategoryMain = ({ blogItem }) => {
   if (!blogItem) return null;
@@ -8,7 +8,8 @@ const blogCategoryMain = ({ blogItem }) => {
       <div
         className={styles.blogCategoryMain}
         style={{
-          backgroundImage: `url(${import.meta.env.VITE_DIRECTUS_URL}/assets/${blogItem.categoryImage})`,
+          backgroundImage: `url(${blogItem.categoryImage})`,
+          backgroundPosition: "center",
         }}
       >
         <div className={styles.texts}>

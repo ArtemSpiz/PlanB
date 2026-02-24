@@ -1,7 +1,7 @@
 .card {
   position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 480px;
   background-color: #ffffff;
   border-radius: 4px;
   padding: 16px;
@@ -11,8 +11,15 @@
 
   .image {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .content {
@@ -32,6 +39,10 @@
       font-style: normal;
       font-weight: 500;
       line-height: 120%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 

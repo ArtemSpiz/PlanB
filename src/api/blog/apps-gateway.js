@@ -1,15 +1,15 @@
-import { directusApi } from '../../plugins/axios';
+import { initialCards } from '../../data/apps';
 
-const postPreviewFields = 'category, logo, title, description, tags , links';
+const mockApps = initialCards.map((card) => ({
+  ...card,
+  description: card.text,
+  tags: card.tag,
+  links: card.links || '#',
+}));
 
 export async function getPostsPreview() {
   try {
-    const { data } = await directusApi.get('Apps', {
-      params: {
-        fields: postPreviewFields,
-      },
-    });
-    return data.data;
+    return mockApps;
   } catch (e) {
     console.log(e);
     return [];

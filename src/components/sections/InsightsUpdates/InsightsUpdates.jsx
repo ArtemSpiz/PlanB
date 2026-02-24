@@ -1,17 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
+import { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
-import InsightsUpdatesCard from '@/components/blocks/InsightsUpdatesCard/InsightsUpdatesCard.jsx';
-import Button from '@/components/ui/Button/Button.jsx';
-import { INSIGHTSUPDATES } from '@/data/insights-updates.js';
-import arrow from '@/assets/icons/arrow-white.svg';
-import styles from '@/components/sections/InsightsUpdates/InsightsUpdates.module.scss';
-import { BlogGateway } from '../../../api/blog/blog-gateway';
-import { useNavigate } from 'react-router';
+import InsightsUpdatesCard from "@/components/blocks/InsightsUpdatesCard/InsightsUpdatesCard.jsx";
+import Button from "@/components/ui/Button/Button.jsx";
+import arrow from "@/assets/icons/arrow-white.svg";
+import styles from "@/components/sections/InsightsUpdates/InsightsUpdates.module.scss";
+import { BlogGateway } from "../../../api/blog/blog-gateway";
+import { useNavigate } from "react-router";
 
 const InsightsUpdates = () => {
   const swiperRef = useRef(null);
@@ -24,7 +23,7 @@ const InsightsUpdates = () => {
         const blogData = await BlogGateway.getPostsPreview();
         setBlogs(Array.isArray(blogData) ? blogData : []);
       } catch (error) {
-        console.error('Failed to fetch news:', error);
+        console.error("Failed to fetch news:", error);
         setBlogs([]);
       }
     };
@@ -34,7 +33,7 @@ const InsightsUpdates = () => {
 
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/blog');
+    navigate("/blog");
   };
 
   return (
@@ -56,12 +55,12 @@ const InsightsUpdates = () => {
       <div className={styles.slider}>
         <Swiper
           className={styles.swiper}
-          effect={'coverflow'}
+          effect={"coverflow"}
           observer={true}
           observeParents={true}
           centeredSlides={true}
           loop={true}
-          slidesPerView={'auto'}
+          slidesPerView={"auto"}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           allowTouchMove={false}
           spaceBetween={30}

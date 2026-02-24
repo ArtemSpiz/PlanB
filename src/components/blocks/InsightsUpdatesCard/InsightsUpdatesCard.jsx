@@ -1,4 +1,5 @@
 import { ReactSVG } from 'react-svg';
+import PropTypes from 'prop-types';
 
 import topLeft from '@/assets/icons/top-left.svg';
 import topRight from '@/assets/icons/top-right.svg';
@@ -7,6 +8,7 @@ import bottomLeft from '@/assets/icons/bot-left.svg';
 import styles from '@/components/blocks/InsightsUpdatesCard/InsightsUpdatesCard.module.scss';
 import OptimizedImage from '../../OptimizedImage';
 import { NavLink } from 'react-router';
+import blogImage from '@/assets/images/blogImg1.png';
 
 const InsightsUpdatesCard = ({ card }) => {
   return (
@@ -18,9 +20,8 @@ const InsightsUpdatesCard = ({ card }) => {
     >
       <OptimizedImage
         className={styles.image}
-        src={card.image}
+        src={card.image || blogImage}
         width="100%"
-        height="auto"
         alt="image"
       />
       <div className={styles.content}>
@@ -45,6 +46,16 @@ const InsightsUpdatesCard = ({ card }) => {
       />
     </NavLink>
   );
+};
+
+InsightsUpdatesCard.propTypes = {
+  card: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    slug: PropTypes.string.isRequired,
+    image: PropTypes.any,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default InsightsUpdatesCard;

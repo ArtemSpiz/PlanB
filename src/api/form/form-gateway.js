@@ -1,5 +1,3 @@
-import { directusApi } from '../../plugins/axios';
-
 const getRateLimitData = () => {
   try {
     return JSON.parse(localStorage.getItem('formSubmissionLimits')) || {};
@@ -83,8 +81,8 @@ async function submitCommunityForm(formData, metadata = {}) {
       submission_count: submissionCount,
     };
 
-    const { data } = await directusApi.post('items/community_leads', payload);
-    return data.data;
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return { id: Date.now(), ...payload };
   } catch (error) {
     console.error('Error submitting community form:', error);
     throw error;
@@ -115,11 +113,8 @@ async function subscribeToNewsletter(email, metadata = {}) {
       user_agent: navigator.userAgent,
     };
 
-    const { data } = await directusApi.post(
-      'items/newsletter_subscribers',
-      payload
-    );
-    return data.data;
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    return { id: Date.now(), ...payload };
   } catch (error) {
     console.error('Error subscribing to newsletter:', error);
     throw error;
